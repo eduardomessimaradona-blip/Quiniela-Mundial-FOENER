@@ -356,7 +356,7 @@ const SUPABASE_URL='https://lnefvahjpfbtomupfgkd.supabase.co';
 const SUPABASE_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxuZWZ2YWhqcGZidG9tdXBmZ2tkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk2MzMyNTUsImV4cCI6MjA5NTIwOTI1NX0.Prb2IP_Znj3m0PumoW6vIbDUpdEBM7i4Z8gq17HQ6fQ';
 const FOOTBALL_API_KEY='173de29b7acd450282d6cb39b9627468';
 const GRUPO_ID='FOENER';
-const LOCK_HOURS=3; // horas antes de bloquear
+const LOCK_HOURS=1 ; // horas antes de bloquear
 const sb=supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
 
 // ── MATCH DATA (chronological order with kickoff times UTC) ──
@@ -606,7 +606,7 @@ async function renderPredMatches(){
   document.getElementById('predContainer').innerHTML=html;
 
   const b=bonus||{};
-  const bonusLocked=new Date()>=new Date('2026-06-11T17:00:00');
+  const bonusLocked=new Date()>=new Date('2026-06-12T17:00:00');
   const bdis=bonusLocked?'disabled':'';
   const bonusLockEl=document.getElementById('bonusLockNotice');
   if(bonusLockEl) bonusLockEl.innerHTML=bonusLocked?'<div class="notice">🔒 Los bonus se cerraron al inicio del torneo (11 Jun).</div>':'<div class="notice">⚠️ Los bonus se bloquean el <strong>11 de junio</strong> al inicio del torneo.</div>';
