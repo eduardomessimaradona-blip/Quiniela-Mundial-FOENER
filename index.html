@@ -609,7 +609,7 @@ async function renderPredMatches(){
   const bonusLocked=new Date()>=new Date('2026-06-12T17:00:00');
   const bdis=bonusLocked?'disabled':'';
   const bonusLockEl=document.getElementById('bonusLockNotice');
-  if(bonusLockEl) bonusLockEl.innerHTML=bonusLocked?'<div class="notice">🔒 Los bonus se cerraron al inicio del torneo (11 Jun).</div>':'<div class="notice">⚠️ Los bonus se bloquean el <strong>11 de junio</strong> al inicio del torneo.</div>';
+  if(bonusLockEl) bonusLockEl.innerHTML=bonusLocked?'<div class="notice">🔒 Los bonus se cerraron al inicio del torneo (12 Jun).</div>':'<div class="notice">⚠️ Los bonus se bloquean el <strong>12 de junio</strong> al inicio del torneo.</div>';
   document.getElementById('bonusContainer').innerHTML=`<div class="card">
     <div class="card-head">🏆 Bonus finales</div>
     <div class="field" style="margin-bottom:10px"><label>🏆 Campeón (+5 pts)</label>
