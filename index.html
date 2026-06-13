@@ -774,8 +774,12 @@ async function showOtherPreds(playerId,playerName){
       const r=results[p.key];
       let predStr='—';
       if(pred){
-        if(pred.h!=null&&pred.a!=null) predStr=`${pred.h} - ${pred.a}`;
-        else if(pred.r) predStr=pred.r==='1'?`Gana ${p.home.n}`:pred.r==='X'?'Empate':`Gana ${p.away.n}`;
+        const hv=pred.h!=null?pred.h:(pred.a!=null?0:null);
+        const av=pred.a!=null?pred.a:(pred.h!=null?0:null);
+        const hasScore=hv!=null&&av!=null;
+        const hasSel=pred.r!=null;
+        if(hasScore) predStr=`${hv} - ${av}`;
+        else if(hasSel) predStr=pred.r==='1'?`Gana ${p.home.n}`:pred.r==='X'?'Empate':`Gana ${p.away.n}`;
       }
       let pts='';
       if(r&&pred){
